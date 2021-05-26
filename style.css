@@ -35,6 +35,9 @@ li{
     width: calc(100% - 244px);
 }
 
+#logo-short{
+    display: none;
+}
 
 
 /* main panel section start */
@@ -256,6 +259,48 @@ li{
         margin: 1rem 0rem;
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+}
+
+@media (max-width: 992px){
+    .sidebar{
+        position: fixed;
+        transition: .5s all;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    #dash-logo-bid{
+        display: none;
+    }
+    .dashboard-body{
+        width: 100%;
+    }
+    .dashboard-body .navbar{
+        left: 0px !important;
+        width: 100% !important;
+        z-index: 99 !important;
+    }
+    #logo-short{
+        display: flex;
+    }
+}
+
+@media (max-width: 520px){
+
+    #leaderboard{
+        overflow:auto;
+    }
+    #tasks{
+        overflow:auto;
+    }
+
+    .list-wrapper ul li{
+        padding: 20px 1px !important;
+    }
+
+    #profile-name{
+        display: none;
     }
 
 }
