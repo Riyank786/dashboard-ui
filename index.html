@@ -26,9 +26,9 @@
     
     <div class="container">
         
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             
-            <div class="sidebar-brand-wrapper">
+            <div class="sidebar-brand-wrapper" id="dash-logo-bid">
                 <a href="#" class="brand-logo">DashBoard</a>
             </div>
             <ul class="nav" id="side-nav-list">
@@ -104,9 +104,14 @@
         <div class="dashboard-body">
             
             <nav class="navbar">
-                <!-- <div class="navbar-menu-wrapper">
-                    <button class="navbar-toggler"><i class="ri-menu-line"></i></button>
-                </div> -->
+                <div style="display: flex;">
+                    <div class="navbar-menu-wrapper " id="logo-short">
+                        <button class="navbar-toggler menu-toggler" onclick="toggleSidebar()"><i class="ri-menu-2-line"></i></button>
+                    </div>
+                    <div class="navbar-menu-wrapper" id="logo-short">
+                        <button class="navbar-toggler">D</button>
+                    </div>
+                </div>
                 <div class="profile-dropdown" id="profile-dropdown">
                     <h4 style="padding: 1rem;">Profile</h4>
                     <a href="#" class="dropdown-item">
@@ -146,7 +151,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <div class="navbar-profile" onclick="toggleProfile()">
-                                <p>Jorge Rondriguez</p>
+                                <p id="profile-name">Jorge Rondriguez</p>
                                 <img src="images/p8.png" alt="images" style="background-color: aquamarine;">
                                 <i class="ri-arrow-down-s-fill" ></i>
                             </div>
@@ -552,8 +557,8 @@
                     <div class="row">
                         
                         <!-- leaderboard section  -->
-                        <div class="streach-card col-12">
-                            <div class="card">
+                        <div class="streach-card col-12" id="leaderboard">
+                            <div class="card" id="leaderboard">
                                 <div class="card-body">
                                     <div class="up-les-heading">
                                         <h4 class="card-title">Leaderboard</h4>
@@ -657,8 +662,8 @@
                         
                         
                         <!-- task section -->
-                        <div class="streach-card col-6">
-                            <div class="card">
+                        <div class="streach-card col-6" id="tasks">
+                            <div class="card" id="tasks">
                                 <div class="card-body">
                                     <div class="up-les-heading">
                                         <h4 class="card-title">Tasks</h4>
