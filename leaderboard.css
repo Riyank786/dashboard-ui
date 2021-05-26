@@ -1,0 +1,81 @@
+#language{
+    width: 200px;
+}
+
+.table {
+    margin-bottom: 0;
+    color: #6c7293;
+    width: 100%;
+    border-collapse: collapse;
+}
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-weight: 500;
+    color: white;
+    padding: 20px 0;
+}
+
+.table th,.table td{
+    vertical-align:middle;
+    font-size: 0.875rem;
+    text-align: start;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 1rem ;
+    border-top: 1px solid #2c2e33;
+}
+ /* leaderboard section end */
+
+
+/* tasks section start */
+
+.list-wrapper {
+    height: 100%;
+    max-height: 100%;
+}
+
+.list-wrapper ul {
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.list-wrapper ul li {
+    font-size: .9375rem;
+    border-bottom: 1px solid #2c2e33;
+    color: #6570aa;
+    padding: 20px;
+}
+
+.list-wrapper ul li div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.task-list-task .checkbox{
+    margin: 0 1rem;
+}
+
+
+
+.task-list li section{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-left: 1rem;
+}
+
+.task-list li section section{
+    color: black;
+    font-weight: bold;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    padding:3px 20px;
+}

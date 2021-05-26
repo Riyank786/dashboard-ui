@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="dashboar-navbar.css">
+    <link rel="stylesheet" href="upcoming-lessons.css">
+    <link rel="stylesheet" href="time-table.css">
+    <link rel="stylesheet" href="mycourses.css">
+    <link rel="stylesheet" href="homework.css">
+    <link rel="stylesheet" href="leaderboard.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <title>DashBoard</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        
+        <div class="sidebar">
+            
+            <div class="sidebar-brand-wrapper">
+                <a href="#" class="brand-logo">DashBoard</a>
+            </div>
+            <ul class="nav" id="side-nav-list">
+                <li class="menu-items">
+                    <a href="#" class="nav-link active">
+                        <span class="menu-icon">
+                            <i class="ri-home-5-line"></i>
+                        </span>
+                        <span class="menu-title">Home</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-briefcase-2-line"></i>
+                        </span>
+                        <span class="menu-title">Tutoring</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-book-open-line"></i>
+                        </span>
+                        <span class="menu-title">My Courses</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-building-line"></i>
+                        </span>
+                        <span class="menu-title">My School</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-file-3-line"></i>
+                        </span>
+                        <span class="menu-title">Tests</span>
+                    </a>
+                </li>
+                
+                <hr>
+                
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-pencil-fill"></i>
+                        </span>
+                        <span class="menu-title">Notes</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-bookmark-line"></i>
+                        </span>
+                        <span class="menu-title">Bookmarks</span>
+                    </a>
+                </li>
+                <li class="menu-items">
+                    <a href="#" class="nav-link">
+                        <span class="menu-icon">
+                            <i class="ri-settings-3-fill"></i>
+                        </span>
+                        <span class="menu-title">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dashboard-body">
+            
+            <nav class="navbar">
+                <!-- <div class="navbar-menu-wrapper">
+                    <button class="navbar-toggler"><i class="ri-menu-line"></i></button>
+                </div> -->
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <h4 style="padding: 1rem;">Profile</h4>
+                    <a href="#" class="dropdown-item">
+                        <div class="thumbnail">
+                            <div class="thumbnail-icon">
+                                <i class="ri-settings-3-fill" style="color:#00d25b ;"></i>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p style="margin-bottom: 0.25rem;">Settings</p>
+                        </div>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <div class="thumbnail">
+                            <div class="thumbnail-icon">
+                                <i class="ri-logout-box-r-line" style="color:#fc424a ;"></i>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p style="margin-bottom: 0.25rem;">Log out</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="ri-heart-fill"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" onclick="toggleNotification()">
+                            <i class="ri-notification-3-fill"></i>
+                            <span class="count"></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <div class="navbar-profile" onclick="toggleProfile()">
+                                <p>Jorge Rondriguez</p>
+                                <img src="images/p8.png" alt="images" style="background-color: aquamarine;">
+                                <i class="ri-arrow-down-s-fill" ></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="notifications" id="notifications">
+
+                <div class="notification-header">
+                    <h3>Notifications</h3>
+                    <button onclick="toggleNotification()">x</button>
+                </div>
+
+                <ul>
+                    <li>Today</li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(93, 198, 233);">
+                            <span>MC</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Margo Corn has invited you to the projet Untitled</div>
+                            <div class="text-muted" style="width: 50px;">2 min</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(63, 92, 56);">
+                            <span>EH</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Elsa Hoffman removed you from Web Dolfin</div>
+                            <div class="text-muted" style="width: 50px;">1hr</div>
+                        </div>
+                    </li>
+                    <li>Yesterday</li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(223, 202, 16);">
+                            <span>NP</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Nadya Poplovetsc accepted your invitation the project Untitled 2</div>
+                            <div class="text-muted" style="width: 50px;">14:12</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(4, 101, 156);">
+                            <span>KK</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Kondstantin Kondstantinovivn removed you from Mobile Dolfin</div>
+                            <div class="text-muted" style="width: 50px;">12:03</div>
+                        </div>
+                    </li>
+                    <li >24 May 20</li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(223, 202, 16);">
+                            <span>Np</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Nadya Poplovetsc mentoined you in a comment in the project Untitled 2</div>
+                            <div class="text-muted" style="width: 50px;">2 min</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="notification-logo" style="background-color: rgb(35, 175, 156);">
+                            <span>MD</span> 
+                        </div>
+                        <div class="notification-content">
+                            <div class="noti-text">Magda Davis accepted your invitaiton the project Unititled 2</div>
+                            <div class="text-muted" style="width: 50px;">08:15</div>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+            </div>
+            
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    
+                    <div class="row">
+                        
+                        <div class="streach-card col-12">
+                            
+                            <div class="header card">
+                                <h1>Hi, champion!</h1>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        
+                        <!-- Upcomming lesson section  -->
+                        <div class="streach-card col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Upcomming Lessons</h4>
+                                        <p class="text-muted">Time Of Lessons</p>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="lessons-list">
+                                                <div class="lesson">
+                                                    <div class="tutor">
+                                                        <div class="tutor-img">
+                                                            <img src="images/p1.png" alt=""
+                                                            style="background-color:rgb(81, 81, 158);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="lessons-content">
+                                                        <div class="flex-grow">
+                                                            <h3 style="margin-bottom: 10px;">Tutoring, Algebra</h3>
+                                                            <p class="text-muted">Kiersten Lange</p>
+                                                        </div>
+                                                        <div class="time">
+                                                            <p class="text-muted" style="margin-bottom: 10px;">Jun 10
+                                                            </p>
+                                                            <p class="text-muted">4:00 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="lessons-list">
+                                                <div class="lesson">
+                                                    <div class="tutor">
+                                                        <div class="tutor-img">
+                                                            <img src="images/p2.png" alt=""
+                                                            style="background-color:rgb(5, 68, 14)">
+                                                        </div>
+                                                    </div>
+                                                    <div class="lessons-content">
+                                                        <div class="flex-grow">
+                                                            <h3 style="margin-bottom: 10px;">School HomeWork</h3>
+                                                            <p class="text-muted">Global History/Analysis</p>
+                                                        </div>
+                                                        <div class="time">
+                                                            <p class="text-muted" style="margin-bottom: 10px;">Jun 10
+                                                            </p>
+                                                            <p class="text-muted"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="lessons-list">
+                                                <div class="lesson">
+                                                    <div class="tutor">
+                                                        <div class="tutor-img">
+                                                            <img src="images/p3.png" alt=""
+                                                            style="background-color:rgb(136, 41, 54);">
+                                                        </div>
+                                                    </div>
+                                                    <div class="lessons-content">
+                                                        <div class="flex-grow">
+                                                            <h3 style="margin-bottom: 10px;">Tutoring, French Language
+                                                            </h3>
+                                                            <p class="text-muted">Pierre Hackett</p>
+                                                        </div>
+                                                        <div class="time">
+                                                            <p class="text-muted" style="margin-bottom: 10px;">Jun 11
+                                                            </p>
+                                                            <p class="text-muted">5:00 PM</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- time table section  -->
+                        <div class="streach-card col-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Time Table</h4>
+                                    </div>
+                                    <div>
+                                        <div class="month">      
+                                            <ul>
+                                              <li class="prev">&#10094;</li>
+                                              <li class="next">&#10095;</li>
+                                              <li>
+                                                August<br>
+                                                <span style="font-size:18px">2021</span>
+                                              </li>
+                                            </ul>
+                                          </div>
+                                          
+                                          <ul class="weekdays">
+                                            <li>Mo</li>
+                                            <li>Tu</li>
+                                            <li>We</li>
+                                            <li>Th</li>
+                                            <li>Fr</li>
+                                            <li>Sa</li>
+                                            <li>Su</li>
+                                          </ul>
+                                          
+                                          <ul class="days">  
+                                            <li>1</li>
+                                            <li>2</li>
+                                            <li>3</li>
+                                            <li>4</li>
+                                            <li>5</li>
+                                            <li>6</li>
+                                            <li>7</li>
+                                            <li>8</li>
+                                            <li>9</li>
+                                            <li><span class="active">10</span></li>
+                                            <li>11</li>
+                                            <li>12</li>
+                                            <li>13</li>
+                                            <li>14</li>
+                                            <li>15</li>
+                                            <li>16</li>
+                                            <li>17</li>
+                                            <li>18</li>
+                                            <li>19</li>
+                                            <li>20</li>
+                                            <li>21</li>
+                                            <li>22</li>
+                                            <li>23</li>
+                                            <li>24</li>
+                                            <li>25</li>
+                                            <li>26</li>
+                                            <li>27</li>
+                                            <li>28</li>
+                                            <li>29</li>
+                                            <li>30</li>
+                                            <li>31</li>
+                                          </ul>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    
+                    <div class="row" id="row2">
+                        
+                        <!-- graph section  -->
+                        <div class="streach-card col-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Spent Time</h4>
+                                    </div>
+                                    
+                                    <div id="linechart"></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- my courses section  -->
+                        <div class="streach-card col-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">My Courses</h4>
+                                        
+                                        <div class="carousal-control">
+                                            <button class="carousal-btn"><i class="ri-arrow-left-s-line"></i></button>
+                                            <button class="carousal-btn"> <i class="ri-arrow-right-s-line"></i></button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="up-les-heading">
+                                        <div style="display:flex; align-items: center;">
+                                            <p class="text-muted">3 Courses</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mycourses-content-wrapper">
+                                        
+                                        
+                                        <div class="mycourses-items">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="caro-header">
+                                                        <div>
+                                                            <img src="images/fitness.png" alt="images"
+                                                            style="background-color: antiquewhite; border-radius: 15px; width:50px; height: 50px;">
+                                                        </div>
+                                                        <div class="caro-title">
+                                                            <p style="color: greenyellow;">Advance</p>
+                                                            <h4>Daily Workout</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="course-tutor">
+                                                        by &nbsp; <img src="images/p3.png" alt="images"
+                                                        style="background-color: antiquewhite;width:25px; height: 25px;">
+                                                        &nbsp; Hailey Staurt
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="row-12">
+                                                    <div class="course-progress">
+                                                        <label for="file1">39%</label>
+                                                        &nbsp;&nbsp; <progress id="file1" value="39" max="100"> 39%
+                                                        </progress> &nbsp;&nbsp; 3/8
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="images/india.png"
+                                                        alt=""
+                                                        style="background-color: antiquewhite;width:25px; height: 25px;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                        
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- HomeWork progress section -->
+                        <div class="streach-card col-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Homework Progress</h4>
+                                    </div>
+                                    <div class="work-prog">
+                                        <div class="radialProgressBar progress-50">
+                                            <div class="overlay">50%</div>
+                                         </div>
+                                         <div class="subject-details">
+                                             <h3 style="margin-bottom: 7px;">Physics</h3>
+                                             <p class="text-muted">September 7, Monday</p>
+                                        </div>
+                                        <div
+                                        style="display: flex; align-items: center; justify-content:center; font-size: 2rem; cursor: pointer;">
+                                        >
+                                    </div>
+                                </div>
+                                <div class="work-prog">
+                                    
+                                    <div class="radialProgressBar progress-30">
+                                        <div class="overlay">30%</div>
+                                    </div>
+                                    
+                                    <div class="subject-details">
+                                        <h3 style="margin-bottom: 7px;">Chemistry</h3>
+                                        <p class="text-muted">September 8, Tuesday</p>
+                                    </div>
+                                    <div
+                                    style="display: flex; align-items: center; justify-content:center; font-size: 2rem; cursor: pointer;">
+                                    >
+                                </div>
+                            </div>
+                                    <div class="work-prog">
+                                        
+                                        <div class="radialProgressBar progress-70">
+                                            <div class="overlay">70%</div>
+                                        </div>
+                                        
+                                        <div class="subject-details">
+                                            <h3 style="margin-bottom: 7px;">Phylosophy</h3>
+                                            <p class="text-muted">september 9, Wednesday</p>
+                                        </div>
+                                        <div
+                                        style="display: flex; align-items: center; justify-content:center; font-size: 2rem; cursor: pointer;">
+                                        >
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        
+                        <!-- leaderboard section  -->
+                        <div class="streach-card col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Leaderboard</h4>
+                                        <select name="language" id="language">
+                                            <option value="English">English</option>
+                                            <option value="English">French</option>
+                                            <option value="English">Italic</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="table-responsive">
+                                        
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th style="padding-left: 12px;">Rank</th>
+                                                    <th style="padding-left: 22px;">Name</th>
+                                                    <th>Best Score</th>
+                                                    <th style="padding-left: 12px;">Points</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1 <i class="ri-arrow-up-s-fill" style="color: green;"></i></td>
+                                                    <td style="display: flex; align-items: center;">
+                                                        <img src="images/p4.png" alt="images"
+                                                        style="background-color: rgb(81, 81, 158);">
+                                                        <span style="padding-left: 10px;">Pattrick Alves Devano</span>
+                                                    </td>
+                                                    <td class="point-center">98</td>
+                                                    <td>2324</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2 <span style="color: cadetblue;">&nbspo</span></td>
+                                                    <td style="display: flex; align-items: center;">
+                                                        <img src="images/p5.png" alt="images"
+                                                        style=" background-color: rgb(5, 68, 14);">
+                                                        <span style="padding-left: 10px;">Jeniffer Hudson</span>
+                                                    </td>
+                                                    <td class="point-center">96</td>
+                                                    <td>2310</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3 <i class="ri-arrow-down-s-fill" style="color: red;"></i></td>
+                                                    <td style="display: flex; align-items: center;">
+                                                        <img src="images/p6.png" alt="images"
+                                                        style="background-color:rgb(136, 41, 54);">
+                                                        <span style="padding-left: 10px;">Stevia Rownders</span>
+                                                    </td>
+                                                    <td class="point-center">97</td>
+                                                    <td>2305</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 0.1px solid white ;">4 <span
+                                                            style="color: cadetblue;">&nbspo</span></i></td>
+                                                            <td style="border-bottom: 0.1px solid white ;"
+                                                            style="display: flex; align-items: center;">
+                                                            <img src="images/p7.png" alt="images"
+                                                            style="background-color:rgb(145, 138, 47);">
+                                                            <span style="padding-left: 10px;">Sam Anderson</span>
+                                                        </td>
+                                                        <td class="point-center" style="border-bottom: 0.1px solid white ;">
+                                                            89
+                                                    </td>
+                                                    <td style="border-bottom: 0.1px solid white ;">2110</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>16 <i class="ri-arrow-up-s-fill" style="color: green;"></i></td>
+                                                    <td style="display: flex; align-items: center;">
+                                                        <img src="images/p8.png" alt="images"
+                                                        style="background-color:rgb(238, 121, 12);">
+                                                        <span style="padding-left: 10px;">Jorge Rondriguez</span>
+                                                    </td>
+                                                    <td class="point-center">82</td>
+                                                    <td>1998</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row">
+                        
+                        <!-- graph section -->
+                        <div class="streach-card col-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Skills</h4>
+                                    </div>
+                                    <div id="piechart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- task section -->
+                        <div class="streach-card col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="up-les-heading">
+                                        <h4 class="card-title">Tasks</h4>
+                                    </div>
+                                    <div class="list-wrapper">
+                                        <ul class="task-list">
+                                            <li>
+                                                <div class="task-list-task">
+                                                    <input type="checkbox" class="checkbox">
+                                                    <h2>Concise history of Jend. Soerdiman</h2>
+                                                    <p class="text-muted">Due on 4.30 PM, 3 Mar 2019</p>
+                                                </div>
+                                                <section>
+                                                    <div>
+                                                        <img src="images/p1.png" alt="images"
+                                                        style="width: 25px; height: 25px;"> Mrs. Shakeera
+                                                    </div>
+                                                    <section style="background-color: rgb(107, 230, 107)">History
+                                                    </section>
+                                                </section>
+                                            </li>
+                                            <li>
+                                                <div class="task-list-task">
+                                                    <input type="checkbox" class="checkbox">
+                                                    <h2>Make 3 carrycature on papper</h2>
+                                                    <p class="text-muted">Due on 2.40 PM, 28 Feb 2019</p>
+                                                </div>
+                                                <section>
+                                                    <div>
+                                                        <img src="images/p4.png" alt="images"
+                                                        style="width: 25px; height: 25px;"> Mr. Robot Sergio
+                                                    </div>
+                                                    <section style="background-color: rgb(104, 202, 235);">Art</section>
+                                                </section>
+                                            </li>
+                                            <li>
+                                                <div class="task-list-task">
+                                                    <input type="checkbox" class="checkbox">
+                                                    <h2>Concise history of Jend. Soerdiman</h2>
+                                                    <p class="text-muted">Due on 4.30 PM, 3 Mar 2019</p>
+                                                </div>
+                                                <section>
+                                                    <div>
+                                                        <img src="images/p1.png" alt="images"
+                                                        style="width: 25px; height: 25px;"> Mrs. Shakeera
+                                                    </div>
+                                                    <section style="background-color: lightcoral;">History</section>
+                                                </section>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

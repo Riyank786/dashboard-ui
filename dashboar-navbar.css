@@ -1,0 +1,90 @@
+.dashboard-body .navbar{
+    font-weight: normal;
+    left: 244px;
+    transition: left 0.25s ease;
+    background-color: #191c24;
+    position: fixed;
+    display: flex;
+    width: calc(100% - 244px);
+
+    z-index: 2;
+}
+
+/* .dashboard-body .navbar .navbar-menu-wrapper{
+    transition: width 0.25s ease;
+    box-shadow: 20px 19px 34px -15px rgb(0 0 0 / 50%);
+    color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-grow: 1;
+    align-items: stretch !important;
+
+} */
+
+/* .dashboard-body .navbar .navbar-menu-wrapper .navbar-toggler{
+    color: #6c7293;
+    height: 70px;
+    border-radius: 0px;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+} */
+
+.dashboard-body .navbar .navbar-nav{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;    
+    margin-left: auto;
+
+    background-color: inherit;
+}
+
+.dashboard-body .navbar .navbar-nav .nav-item .nav-link{
+    color: white;
+    font-size: 0.9375rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    white-space: nowrap;
+    position: relative;
+}
+
+.dashboard-body .navbar .navbar-nav .nav-item .nav-link i{
+    font-size: 1.125rem;
+}
+
+.dashboard-body .navbar .navbar-nav .nav-item .nav-link .count{
+
+    position: absolute;
+    left: 66%;
+    width: 7px;
+    height: 7px;
+    color: #ffffff;
+    border-radius: 100%;
+    text-align: center;
+    font-size: .625rem;
+    line-height: 1.5;
+    background-color: #fc424a !important;
+
+}
+
+.dashboard-body .navbar .navbar-nav .nav-item .nav-link .navbar-profile{
+    display: flex;
+    font-weight: normal;
+    align-items: center;
+}
+
+.navbar-profile p,.navbar-profile i,.navbar-profile img{
+
+    margin-right: 1rem;
+
+}

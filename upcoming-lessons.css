@@ -1,0 +1,50 @@
+.up-les-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.card-body .card-title {
+    color: #ffffff;
+    margin-bottom: 1.125rem;
+    text-transform: capitalize;
+    margin-bottom: 0.25rem
+}
+
+.card-body .text-muted{
+    color: #6c7293 ;
+}
+
+.lessons-list .lesson{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1rem 0rem;
+    font-size: .875rem;
+    border-bottom: 1px solid #2c2e33;
+}
+
+.lessons-list .lesson .tutor .tutor-img{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lessons-list .lesson .lessons-content{
+    line-height: 1;
+    padding-left: 15px;
+    flex-grow: 1;
+    display: flex;
+    color: white !important;
+}
+.flex-grow {
+    flex-grow: 1;
+}
+img{
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+}
