@@ -87,6 +87,9 @@ window.onload = function () {
     let profile = document.getElementById('profile-dropdown');
     profile.style.top = '-200px';
 
+    let sidebar = document.getElementById('sidebar');
+    sidebar.style.left = '-300px';
+
 }
 
 function toggleNotification(){
@@ -108,6 +111,17 @@ function toggleProfile(){
     }
     else{
         profile.style.top = '-200px';
+    }
+}
+
+function toggleSidebar(){
+    let sidebar = document.getElementById('sidebar');
+    
+    if(sidebar.style.left == '-300px'){
+        sidebar.style.left = 0;
+    }
+    else{
+        sidebar.style.left = '-300px';
     }
 }
 
